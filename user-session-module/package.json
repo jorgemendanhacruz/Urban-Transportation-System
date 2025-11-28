@@ -1,0 +1,50 @@
+{
+  "name": "multi-api-gateway",
+  "version": "1.0.0",
+  "description": "A Node.js service that merges multiple APIs and serves results from cache for speed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/app.ts",
+    "lint": "eslint 'src/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:jorgemendanhacruz/multi-api-gateway.git"
+  },
+  "keywords": [],
+  "author": "Jorge Mendanha Cruz",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "celebrate": "^15.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "method-override": "^3.0.0",
+    "newsapi": "^2.4.1",
+    "node-geocoder": "^4.4.1",
+    "redis": "^5.8.2",
+    "redis-om": "^0.4.7",
+    "reflect-metadata": "^0.2.2",
+    "shallow-equal-object": "^1.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "typedi": "^0.10.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.33.0",
+    "jest": "^30.1.3",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
