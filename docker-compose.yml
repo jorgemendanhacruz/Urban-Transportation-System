@@ -1,0 +1,90 @@
+services:
+
+  # ========================================================
+  # DATABASES (cada microserviço com a sua própria BD)
+  # ========================================================
+
+  redis_db:
+    image: redis:latest
+    container_name: redis_db
+    ports:
+      - "6379:6379"
+
+  oracle_db:
+    image: gvenzl/oracle-xe
+    container_name: oracle_db
+    environment:
+      ORACLE_PASSWORD: admin
+    ports:
+      - "1521:1521"
+
+  mongo_db:
+    image: mongo:latest
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+
+  neo4j_db:
+    image: neo4j:5
+    container_name: neo4j_db
+    environment:
+      NEO4J_AUTH: neo4j/admin
+    ports:
+      - "7474:7474"   # Console Web (Browser UI)
+      - "7687:7687"   # Bolt protocol (API driver)
+
+
+  # ========================================================
+  # MICROSERVIÇOS (API de cada módulo)
+  # ========================================================
+
+  user_session_api:
+    build: ./user_session_api
+    container_name: user_session_api
+    depends_on:
+      - redis_db
+    ports:
+      - "5001:5000"
+
+  business_module_api:
+    build: ./business_module_api
+    container_name: business_module_api
+    depends_on:
+      - oracle_db
+    ports:
+      - "5002:5000"
+
+  user_history_api:
+    build: ./user_history_api
+    container_name: user_history_api
+    depends_on:
+      - mongo_db
+    ports:
+      - "5003:5000"
+
+  route_module_api:
+    build: ./route_module_api
+    container_name: route_module_api
+    depends_on:
+      - neo4j_db
+    ports:
+      - "5004:5000"
+
+
+  # ========================================================
+  # UI (Frontend do sistema)
+  # ========================================================
+
+  ui:
+    build: ./UI
+    container_name: ui
+    ports:
+      - "8080:80"
+    depends_on:
+      - user_session_api
+      - business_module_api
+      - user_history_api
+      - route_module_api
