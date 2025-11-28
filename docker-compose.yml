@@ -40,9 +40,8 @@ services:
   # ========================================================
   # MICROSERVIÇOS (API de cada módulo)
   # ========================================================
-
   user_session_api:
-    build: ./user_session_api
+    build: ./user-session-module
     container_name: user_session_api
     depends_on:
       - redis_db
@@ -50,7 +49,7 @@ services:
       - "5001:5000"
 
   business_module_api:
-    build: ./business_module_api
+    build: ./business-module
     container_name: business_module_api
     depends_on:
       - oracle_db
@@ -58,7 +57,7 @@ services:
       - "5002:5000"
 
   user_history_api:
-    build: ./user_history_api
+    build: ./user-history-module
     container_name: user_history_api
     depends_on:
       - mongo_db
@@ -66,7 +65,7 @@ services:
       - "5003:5000"
 
   route_module_api:
-    build: ./route_module_api
+    build: ./route-module
     container_name: route_module_api
     depends_on:
       - neo4j_db
@@ -78,13 +77,14 @@ services:
   # UI (Frontend do sistema)
   # ========================================================
 
-  ui:
-    build: ./UI
-    container_name: ui
-    ports:
-      - "8080:80"
-    depends_on:
-      - user_session_api
-      - business_module_api
-      - user_history_api
-      - route_module_api
+  #   ui:
+#     build: ./UI
+#     container_name: ui
+#     ports:
+#       - "8080:80"
+#     depends_on:
+#       - user_session_api
+#       - business_module_api
+#       - user_history_api
+#       - route_module_api
+
