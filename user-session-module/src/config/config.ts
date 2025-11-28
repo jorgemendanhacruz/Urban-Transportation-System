@@ -22,16 +22,6 @@ export interface Config {
     username: string;
     password: string;
   };
-  weatherApi: {
-    url: string;
-    name: string;
-    path: string;
-  };
-  newsApi: {
-    url: string;
-    name: string;
-    path: string;
-  };
   controllers: Record<string, Pair>;
   services: Record<string, Pair>;
   repos: Record<string, Pair>;
@@ -57,48 +47,25 @@ const config: Config = {
     password: process.env.REDIS_PASSWORD,
   },
 
-  weatherApi: {
-    url: 'https://api.openweathermap.org/data/2.5/weather?',
-    name: 'WeatherApiClient',
-    path: '../externalAPIs/weatherApiClient',
-  },
-
-  newsApi: {
-    url: 'https://newsapi.org/v2/top-headlines?',
-    name: 'NewsApiClient',
-    path: '../externalAPIs/newsApiClient',
-  },
 
   controllers: {
-    weather: {
-      name: 'WeatherController',
-      path: '../controllers/weatherController',
-    },
-    news: {
-      name: 'NewsController',
-      path: '../controllers/newsController',
+    userSession: {
+      name: 'UserSessionController',
+      path: '../controllers/userSessionController',
     },
   },
 
   services: {
-    weather: {
-      name: 'WeatherService',
-      path: '../services/weatherService',
-    },
-    news: {
-      name: 'NewsService',
-      path: '../services/newsService',
+    userSession: {
+      name: 'UserSessionService',
+      path: '../services/userSessionService',
     },
   },
 
   repos: {
-    weather: {
-      name: 'WeatherRepo',
-      path: '../repos/weatherRepo',
-    },
-    news: {
-      name: 'NewsRepo',
-      path: '../repos/newsRepo',
+    userSession: {
+      name: 'UserSessionRepo',
+      path: '../repos/userSessionRepo',
     },
   },
 };

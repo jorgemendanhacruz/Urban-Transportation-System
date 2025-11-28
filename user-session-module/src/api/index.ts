@@ -1,12 +1,10 @@
 import { Router } from 'express';
-import weather from './routes/weatherRoute'
-import news from './routes/newsRoute'
+import userSession from './routes/userSessionRoute'
 
 export default () => {
 	const app = Router();
 
-	weather(app);
-	news(app);
+	userSession(app);
     
 	return app
 }

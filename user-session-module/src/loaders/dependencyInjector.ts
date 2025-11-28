@@ -1,9 +1,8 @@
 import { Container } from 'typedi';
 import LoggerInstance from './logger';
 
-export default ({ redisConnection, externalAPIs, schemas, controllers, repos, services}: {
+export default ({ redisConnection, schemas, controllers, repos, services}: {
                     redisConnection;
-                    externalAPIs: {name: string; path: string}[];
                     schemas: { name: string; schema: any }[],
                     controllers: {name: string; path: string }[],
                     repos: {name: string; path: string }[],
@@ -12,12 +11,6 @@ export default ({ redisConnection, externalAPIs, schemas, controllers, repos, se
     Container.set('redis.client', redisConnection);
 
     Container.set('logger', LoggerInstance);
-
-    externalAPIs.forEach(m => {
-      let apiClass = require(m.path).default;
-      let apiInstance = Container.get(apiClass);
-      Container.set(m.name, apiInstance);
-    });
 
     schemas.forEach(m => {
       let schema = require(m.schema).default;

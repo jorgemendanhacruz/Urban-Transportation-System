@@ -8,70 +8,39 @@ export default async ({ expressApp }) => {
   const redisConnection = await loadRedis();
   Logger.info('✌️ DB loaded and connected!');
 
-  //externalAPIs
-  const weatherApiClient = {
-    name: config.weatherApi.name,
-    path: config.weatherApi.path,
-  };
-
-  const newsApiClient = {
-    name: config.newsApi.name,
-    path: config.newsApi.path,
-  }
-
   // Schemas
-  const weahterSchema = {
-    name: 'weatherSchema',
-    schema: '../persistence/schemas/weatherSchema',
-  };
-
-  const newsSchema = {
-    name: 'newsSchema',
-    schema: '../persistence/schemas/newsSchema',
+  const userSessionSchema = {
+    name: 'userSessionSchema',
+    schema: '../persistence/schemas/userSessionSchema',
   };
 
   // Controllers
-  const weatherController = {
-    name: config.controllers.weather.name,
-    path: config.controllers.weather.path,
-  };
-
-  const newsController = {
-    name: config.controllers.news.name,
-    path: config.controllers.news.path,
+  const userSessionController = {
+    name: config.controllers.userSession.name,
+    path: config.controllers.userSession.path,
   };
 
   // Repositories
-  const weatherRepo = {
-    name: config.repos.weather.name,
-    path: config.repos.weather.path,
-  };
-
-  const newsRepo = {
-    name: config.repos.news.name,
-    path: config.repos.news.path,
+  const userSessionRepo = {
+    name: config.repos.userSession.name,
+    path: config.repos.userSession.path,
   };
 
 
   // Services
-  const weatherService = {
-    name: config.services.weather.name,
-    path: config.services.weather.path,
+  const userSessionService = {
+    name: config.services.userSession.name,
+    path: config.services.userSession.path,
   };
 
-  const newsService = {
-    name: config.services.news.name,
-    path: config.services.news.path,
-  };
 
   // Dependency Injector
   dependencyInjectorLoader({
     redisConnection,
-    externalAPIs: [weatherApiClient, newsApiClient],
-    schemas: [weahterSchema, newsSchema],
-    controllers: [weatherController, newsController],
-    repos: [weatherRepo, newsRepo],
-    services: [weatherService, newsService],
+    schemas: [userSessionSchema],
+    controllers: [userSessionController],
+    repos: [userSessionRepo],
+    services: [userSessionService],
   });
   Logger.info('✌️ Schemas, Controllers, Repositories, Services, etc. loaded');
 
