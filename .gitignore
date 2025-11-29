@@ -137,3 +137,11 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# user-history-module
+# -------------------------
+user-history-module/node_modules/
+user-history-module/.vs/
+user-history-module/.idea/
+user-history-module/.idea/.idea.node-server.*/
+user-history-module/.vscode/
