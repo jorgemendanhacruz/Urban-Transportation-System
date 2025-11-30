@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import medicalConditionRoute from './src/api/routes/medicalConditionRoute';
 
 // Set the NODE_ENV to 'development' by default
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -54,51 +53,23 @@ export default {
   },
 
   controllers: {
-    role: {
-      name: "RoleController",
-      path: "../controllers/roleController",
-    },
-    allergy: {
-      name: "AllergyController",
-      path: "../controllers/allergyController",
-    },
-    medicalCondition:{
-      name: "MedicalConditionController",
-      path: "../controllers/medicalConditionController",
-    },
+    favorite: {
+      name: "FavoriteController",
+      path: "../controllers/favoriteController",
+    }
   },
 
   repos: {
-    role: {
-      name: "RoleRepo",
-      path: "../repos/roleRepo",
-    },
-    user: {
-      name: "UserRepo",
-      path: "../repos/userRepo",
-    },
-    allergy: {
-      name: "AllergyRepo",
-      path: "../repos/allergyRepo",
-    },
-    medicalCondition: {
-      name: "MedicalConditionRepo",
-      path: "../repos/medicalConditionRepo",
-    },
+    favorite: {
+      name: "FavoriteRepo",
+      path: "../repos/favoriteRepo",
+    }
   },
 
   services: {
-    role: {
-      name: "RoleService",
-      path: "../services/roleService",
-    },
-    allergy: {
-      name: "AllergyService",
-      path: "../services/allergyService",
-    },
-    medicalCondition: {
-      name: "MedicalConditionService",
-      path: "../services/medicalConditionService",
-    },
+    favorite: {
+      name: "FavoriteService",
+      path: "../services/favoriteService",
+    }
   },
 };

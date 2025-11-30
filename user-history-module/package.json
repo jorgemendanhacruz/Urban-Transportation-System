@@ -41,7 +41,7 @@
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.46",
     "mongodb": "^6.11.0",
-    "mongoose": "^8.9.5",
+    "mongoose": "^8.20.1",
     "morgan": "^1.10.0",
     "node-server": "file:",
     "nodemon": "^3.1.7",
@@ -53,12 +53,10 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "@types/agenda": "^3.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.13",
-    "@types/mocha": "^10.0.10",
     "@types/mongoose": "^5.11.96",
     "@types/node": "^22.10.1",
     "@typescript-eslint/eslint-plugin": "^8.17.0",

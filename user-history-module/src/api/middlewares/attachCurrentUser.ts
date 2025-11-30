@@ -4,8 +4,6 @@ import winston from 'winston';
 
 import config from '../../../config';
 
-import IUserRepo from '../../services/IRepos/IUserRepo';
-
 /**
  * Attach user to req.user
  * @param {*} req Express req Object
@@ -13,7 +11,7 @@ import IUserRepo from '../../services/IRepos/IUserRepo';
  * @param {*} next  Express next Function
  */
 const attachCurrentUser = async (req, res, next) => {
-  const Logger = Container.get('logger') as winston.Logger;
+  /*const Logger = Container.get('logger') as winston.Logger;
   try {
 
     const userRepo = Container.get(config.repos.user.name) as IUserRepo
@@ -32,7 +30,7 @@ const attachCurrentUser = async (req, res, next) => {
   } catch (e) {
     Logger.error('🔥 Error attaching user to req: %o', e);
     return next(e);
-  }
+  }*/
 };
 
 export default attachCurrentUser;
