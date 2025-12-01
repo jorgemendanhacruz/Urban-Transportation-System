@@ -37,7 +37,7 @@ export class FavoriteMap extends Mapper<Favorite> {
       userId: favorite.userId,
       entityType: favorite.entityType,
       entityId: favorite.entityId,
-      createdAt: favorite.createdAt.toISOString(),
+      createdAt: favorite.createdAt,
     }
   }
 }

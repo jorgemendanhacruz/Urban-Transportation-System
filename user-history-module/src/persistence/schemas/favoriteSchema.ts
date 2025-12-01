@@ -3,9 +3,11 @@ import mongoose from 'mongoose';
 
 const FavoriteSchema = new mongoose.Schema(
   {
-    domainId: { type: String, unique: true },
-    name: { type: String, unique: true },
-
+    domainId: { type: String, unique: true, required: true },
+    userId: { type: String, required: true },
+    entityType: { type: String, required: true },
+    entityId: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now },
   },
   {
     timestamps: true
