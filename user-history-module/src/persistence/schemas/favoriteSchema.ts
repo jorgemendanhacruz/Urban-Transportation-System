@@ -7,11 +7,11 @@ const FavoriteSchema = new mongoose.Schema(
     userId: { type: String, required: true },
     entityType: { type: String, required: true },
     entityId: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now },
+    createdAt: { type: String, default: Date.now },
   },
   {
     timestamps: true
   }
 );
 
-export default mongoose.model<IFavoritePersistence & mongoose.Document>('Favorite', FavoriteSchema);
+export default mongoose.model<IFavoritePersistence & mongoose.Document>('Favorites', FavoriteSchema, 'Favorites');

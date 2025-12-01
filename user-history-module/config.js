@@ -11,16 +11,6 @@ if (!envFound) {
 const args = process.argv.slice(2);
 const user = args[0] || 'default';
 
-// Connection strings
-const databaseURLs = {
-  joel: "mongodb+srv://joelferreira:WUIbUxXC5Qy2YeJM@node-crud-app.ixyfu.mongodb.net/superbookdb?retryWrites=true&w=majority&appName=node-crud-app",
-  fabio: "mongodb+srv://FabioBorges:jcd6jSaxr4eV0tBB@superbookapp.4fdml.mongodb.net/superbookdb?retryWrites=true&w=majority&appName=superbookapp",
-  jorge: "mongodb+srv://jorgecruz:Pa$$w0rd1234@superbookapp.krouw.mongodb.net/superbookdb?retryWrites=true&w=majority&appName=superbookapp",
-  victor: "mongodb+srv://vns30:In3bHCWXLmy9dWzB@superbookapp.unbah.mongodb.net/superbookdb?retryWrites=true&w=majority&appName=superbookapp",
-  filipe: "mongodb+srv://ffc:arqsi@2024@superbookapp.qbd9x.mongodb.net/superbookdb?retryWrites=true&w=majority&appName=superbookapp",
-};
-
-const selectedDatabaseURL = databaseURLs[user] || "mongodb://127.0.0.1:27017/test";
 
 export default {
   /**
@@ -31,7 +21,7 @@ export default {
   /**
    * Connection string
    */
-  databaseURL: selectedDatabaseURL,
+  databaseURL: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/test",
 
   /**
    * Your secret sauce

@@ -17,6 +17,8 @@ export default class FavoriteService implements IFavoriteService {
     try {
       const favorites = await this.favoriteRepo.findAll();
 
+      //console.log(favorites)
+
       if (!favorites || favorites.length === 0) {
         return Result.ok<IFavoriteDTO[]>([]);
       }

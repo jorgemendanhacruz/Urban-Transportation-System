@@ -10,103 +10,43 @@ export default async ({ expressApp }) => {
   Logger.info('✌️ DB loaded and connected!');
 
   // Schemas
-  const userSchema = {
-    name: 'userSchema',
-    schema: '../persistence/schemas/userSchema',
+  const favoriteSchema = {
+    name: 'favoriteSchema',
+    schema: '../persistence/schemas/favoriteSchema',
   };
-
-  const roleSchema = {
-    name: 'roleSchema',
-    schema: '../persistence/schemas/roleSchema',
-  };
-
-  const allergySchema = {
-    name: 'allergySchema',
-    schema: '../persistence/schemas/allergySchema',
-  };
-
-  const medicalConditionSchema = {
-    name: 'medicalConditionSchema',
-    schema: '../persistence/schemas/medicalConditionSchema.ts'
-  }
 
   // Controllers
-  const roleController = {
-    name: config.controllers.role.name,
-    path: config.controllers.role.path,
-  };
-
-  const allergyController = {
-    name: config.controllers.allergy.name,
-    path: config.controllers.allergy.path,
-  };
-
-  const medicalConditionController = {
-    name: config.controllers.medicalCondition.name,
-    path: config.controllers.medicalCondition.path,
-  };
+  const favoriteController = {
+    name: config.controllers.favorite.name,
+    path: config.controllers.favorite.path,
+  }
 
   // Repositories
-  const roleRepo = {
-    name: config.repos.role.name,
-    path: config.repos.role.path,
-  };
-
-  const userRepo = {
-    name: config.repos.user.name,
-    path: config.repos.user.path,
-  };
-
-  const allergyRepo = {
-    name: config.repos.allergy.name,
-    path: config.repos.allergy.path,
-  };
-
-  const medicalConditionRepo = {
-    name: config.repos.medicalCondition.name,
-    path: config.repos.medicalCondition.path,
-  };
+  const favoriteRepo = {
+    name: config.repos.favorite.name,
+    path: config.repos.favorite.path,
+  }
 
   // Services
-  const roleService = {
-    name: config.services.role.name,
-    path: config.services.role.path,
-  };
-
-  const allergyService = {
-    name: config.services.allergy.name,
-    path: config.services.allergy.path,
-  };
-
-  const medicalConditionService = {
-    name: config.services.medicalCondition.name,
-    path: config.services.medicalCondition.path,
-  };
+  const favoriteService = {
+    name: config.services.favorite.name,
+    path: config.services.favorite.path,
+  }
 
   // Dependency Injector
   dependencyInjectorLoader({
     mongoConnection,
     schemas: [
-      userSchema,
-      roleSchema,
-      allergySchema,
-      medicalConditionSchema,
+      favoriteSchema,
     ],
     controllers: [
-      roleController,
-      allergyController,
-      medicalConditionController,
+      favoriteController
     ],
     repos: [
-      roleRepo,
-      userRepo,
-      allergyRepo,
-      medicalConditionRepo,
+      favoriteRepo
     ],
     services: [
-      roleService,
-      allergyService,
-      medicalConditionService,
+      favoriteService
     ],
   });
   Logger.info('✌️ Schemas, Controllers, Repositories, Services, etc. loaded');

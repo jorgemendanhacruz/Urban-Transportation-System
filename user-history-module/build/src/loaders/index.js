@@ -29,47 +29,19 @@ exports.default = async ({ expressApp }) => {
         schema: '../persistence/schemas/medicalConditionSchema.ts'
     };
     // Controllers
-    const roleController = {
-        name: config_1.default.controllers.role.name,
-        path: config_1.default.controllers.role.path,
-    };
-    const allergyController = {
-        name: config_1.default.controllers.allergy.name,
-        path: config_1.default.controllers.allergy.path,
-    };
-    const medicalConditionController = {
-        name: config_1.default.controllers.medicalCondition.name,
-        path: config_1.default.controllers.medicalCondition.path,
+    const favoriteController = {
+        name: config_1.default.controllers.favorite.name,
+        path: config_1.default.controllers.favorite.path,
     };
     // Repositories
-    const roleRepo = {
-        name: config_1.default.repos.role.name,
-        path: config_1.default.repos.role.path,
-    };
-    const userRepo = {
-        name: config_1.default.repos.user.name,
-        path: config_1.default.repos.user.path,
-    };
-    const allergyRepo = {
-        name: config_1.default.repos.allergy.name,
-        path: config_1.default.repos.allergy.path,
-    };
-    const medicalConditionRepo = {
-        name: config_1.default.repos.medicalCondition.name,
-        path: config_1.default.repos.medicalCondition.path,
+    const favoriteRepo = {
+        name: config_1.default.repos.favorite.name,
+        path: config_1.default.repos.favorite.path,
     };
     // Services
-    const roleService = {
-        name: config_1.default.services.role.name,
-        path: config_1.default.services.role.path,
-    };
-    const allergyService = {
-        name: config_1.default.services.allergy.name,
-        path: config_1.default.services.allergy.path,
-    };
-    const medicalConditionService = {
-        name: config_1.default.services.medicalCondition.name,
-        path: config_1.default.services.medicalCondition.path,
+    const favoriteService = {
+        name: config_1.default.services.favorite.name,
+        path: config_1.default.services.favorite.path,
     };
     // Dependency Injector
     (0, dependencyInjector_1.default)({
@@ -81,20 +53,13 @@ exports.default = async ({ expressApp }) => {
             medicalConditionSchema,
         ],
         controllers: [
-            roleController,
-            allergyController,
-            medicalConditionController,
+            favoriteController
         ],
         repos: [
-            roleRepo,
-            userRepo,
-            allergyRepo,
-            medicalConditionRepo,
+            favoriteRepo
         ],
         services: [
-            roleService,
-            allergyService,
-            medicalConditionService,
+            favoriteService
         ],
     });
     logger_1.default.info('✌️ Schemas, Controllers, Repositories, Services, etc. loaded');

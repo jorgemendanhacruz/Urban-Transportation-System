@@ -25,7 +25,7 @@ class FavoriteMap extends Mapper_1.Mapper {
             userId: favorite.userId,
             entityType: favorite.entityType,
             entityId: favorite.entityId,
-            createdAt: favorite.createdAt.toISOString(),
+            createdAt: favorite.createdAt,
         };
     }
 }

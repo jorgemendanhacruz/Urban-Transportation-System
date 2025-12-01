@@ -9,7 +9,7 @@ interface FavoriteProps {
   userId: string;
   entityType: "line" | "stop" | "itinerary";
   entityId: string;
-  createdAt: Date;
+  createdAt: string;
 }
 
 export class Favorite extends AggregateRoot<FavoriteProps> {
@@ -33,7 +33,7 @@ export class Favorite extends AggregateRoot<FavoriteProps> {
     return this.props.entityId;
   }
 
-  get createdAt(): Date {
+  get createdAt(): string {
     return this.props.createdAt;
   }
 

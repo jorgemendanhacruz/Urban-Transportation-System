@@ -26,6 +26,7 @@ export default class FavoriteRepo implements IFavoriteRepo {
 
 
   public async findAll(): Promise<Favorite[]> {
+
     const favoriteRecords = await this.favoriteSchema.find();
 
     if (!favoriteRecords || favoriteRecords.length === 0) {
