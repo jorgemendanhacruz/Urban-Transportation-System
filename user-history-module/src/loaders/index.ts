@@ -15,10 +15,30 @@ export default async ({ expressApp }) => {
     schema: '../persistence/schemas/favoriteSchema',
   };
 
+  const notificationSchema = {
+    name: 'notificationSchema',
+    schema: '../persistence/schemas/notificationSchema',
+  };
+
+  const userTripHistorySchema = {
+    name: 'userTripHistorySchema',
+    schema: '../persistence/schemas/userTripHistorySchema',
+  };
+
   // Controllers
   const favoriteController = {
     name: config.controllers.favorite.name,
     path: config.controllers.favorite.path,
+  }
+
+  const notificationController = {
+    name: config.controllers.notification.name,
+    path: config.controllers.notification.path,
+  }
+
+  const userTripHistoryController = {
+    name: config.controllers.userTripHistory.name,
+    path: config.controllers.userTripHistory.path,
   }
 
   // Repositories
@@ -27,10 +47,30 @@ export default async ({ expressApp }) => {
     path: config.repos.favorite.path,
   }
 
+  const notificationRepo = {
+    name: config.repos.notification.name,
+    path: config.repos.notification.path,
+  }
+
+  const userTripHistoryRepo = {
+    name: config.repos.userTripHistory.name,
+    path: config.repos.userTripHistory.path,
+  }
+
   // Services
   const favoriteService = {
     name: config.services.favorite.name,
     path: config.services.favorite.path,
+  }
+
+  const notificationService = {
+    name: config.services.notification.name,
+    path: config.services.notification.path,
+  }
+
+  const userTripHistoryService = {
+    name: config.services.userTripHistory.name,
+    path: config.services.userTripHistory.path,
   }
 
   // Dependency Injector
@@ -38,15 +78,23 @@ export default async ({ expressApp }) => {
     mongoConnection,
     schemas: [
       favoriteSchema,
+      notificationSchema,
+      userTripHistorySchema
     ],
     controllers: [
-      favoriteController
+      favoriteController,
+      notificationController,
+      userTripHistoryController
     ],
     repos: [
-      favoriteRepo
+      favoriteRepo,
+      notificationRepo,
+      userTripHistoryRepo
     ],
     services: [
-      favoriteService
+      favoriteService,
+      notificationService,
+      userTripHistoryService
     ],
   });
   Logger.info('✌️ Schemas, Controllers, Repositories, Services, etc. loaded');

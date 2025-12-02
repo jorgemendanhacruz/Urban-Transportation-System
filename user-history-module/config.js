@@ -46,6 +46,16 @@ export default {
     favorite: {
       name: "FavoriteController",
       path: "../controllers/favoriteController",
+    },
+
+    notification: {
+      name: "NotificationController",
+      path: "../controllers/notificationController",
+    },
+
+    userTripHistory: {
+      name: "UserTripHistoryController",
+      path: "../controllers/userTripHistoryController",
     }
   },
 
@@ -53,6 +63,16 @@ export default {
     favorite: {
       name: "FavoriteRepo",
       path: "../repos/favoriteRepo",
+    },
+
+    notification: {
+      name: "NotificationRepo",
+      path: "../repos/notificationRepo",
+    },
+
+    userTripHistory: {
+      name: "UserTripHistoryRepo",
+      path: "../repos/userTripHistoryRepo",
     }
   },
 
@@ -60,6 +80,16 @@ export default {
     favorite: {
       name: "FavoriteService",
       path: "../services/favoriteService",
+    },
+
+    notification: {
+      name: "NotificationService",
+      path: "../services/notificationService",
+    },
+
+    userTripHistory: {
+      name: "UserTripHistoryService",
+      path: "../services/userTripHistoryService",
     }
-  },
+  }
 };

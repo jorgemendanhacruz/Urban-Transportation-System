@@ -31,9 +31,12 @@ export default class FavoriteService implements IFavoriteService {
     }
   }
 
-  public async getFavorite(favoriteId: string): Promise<Result<IFavoriteDTO>> {
+  public async getFavorite(userId: string): Promise<Result<IFavoriteDTO>> {
+
+    console.log(userId)
+
     try {
-      const favorite = await this.favoriteRepo.findByDomainId(favoriteId);
+      const favorite = await this.favoriteRepo.findByUserId(userId);
 
       if (favorite === null) {
         return Result.fail<IFavoriteDTO>("Favorite not found");

@@ -17,9 +17,9 @@ export default class FavoriteController implements IFavoriteController {
 
   public async getFavorite(req: Request, res: Response, next: NextFunction) {
     try {
-      const favoriteId = req.params.id;
+      const userId = req.params.userId;
 
-      const result = await this.favoriteServiceInstance.getFavorite(favoriteId);
+      const result = await this.favoriteServiceInstance.getFavorite(userId);
 
       if (result.isFailure) {
         return res.status(404).send(result.errorValue());

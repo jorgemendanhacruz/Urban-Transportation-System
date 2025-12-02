@@ -1,0 +1,162 @@
+[
+  {
+    "domainId": "trip-001",
+    "userId": "user-01",
+    "tripId": "t-1001",
+    "date": "2024-02-01T08:30:00.000Z",
+    "origin": "Stop A1",
+    "destination": "Stop B3"
+  },
+  {
+    "domainId": "trip-002",
+    "userId": "user-02",
+    "tripId": "t-1002",
+    "date": "2024-02-01T09:00:00.000Z",
+    "origin": "Stop C2",
+    "destination": "Stop D1"
+  },
+  {
+    "domainId": "trip-003",
+    "userId": "user-03",
+    "tripId": "t-1003",
+    "date": "2024-02-02T07:45:00.000Z",
+    "origin": "Stop E4",
+    "destination": "Stop F2"
+  },
+  {
+    "domainId": "trip-004",
+    "userId": "user-04",
+    "tripId": "t-1004",
+    "date": "2024-02-02T10:15:00.000Z",
+    "origin": "Stop G1",
+    "destination": "Stop H5"
+  },
+  {
+    "domainId": "trip-005",
+    "userId": "user-05",
+    "tripId": "t-1005",
+    "date": "2024-02-03T12:00:00.000Z",
+    "origin": "Stop I3",
+    "destination": "Stop J4"
+  },
+  {
+    "domainId": "trip-006",
+    "userId": "user-06",
+    "tripId": "t-1006",
+    "date": "2024-02-03T08:10:00.000Z",
+    "origin": "Stop K2",
+    "destination": "Stop L1"
+  },
+  {
+    "domainId": "trip-007",
+    "userId": "user-07",
+    "tripId": "t-1007",
+    "date": "2024-02-04T14:20:00.000Z",
+    "origin": "Stop M3",
+    "destination": "Stop N2"
+  },
+  {
+    "domainId": "trip-008",
+    "userId": "user-08",
+    "tripId": "t-1008",
+    "date": "2024-02-04T15:00:00.000Z",
+    "origin": "Stop O4",
+    "destination": "Stop P1"
+  },
+  {
+    "domainId": "trip-009",
+    "userId": "user-09",
+    "tripId": "t-1009",
+    "date": "2024-02-05T09:30:00.000Z",
+    "origin": "Stop Q1",
+    "destination": "Stop R3"
+  },
+  {
+    "domainId": "trip-010",
+    "userId": "user-10",
+    "tripId": "t-1010",
+    "date": "2024-02-05T11:45:00.000Z",
+    "origin": "Stop S2",
+    "destination": "Stop T4"
+  },
+  {
+    "domainId": "trip-011",
+    "userId": "user-11",
+    "tripId": "t-1011",
+    "date": "2024-02-06T07:55:00.000Z",
+    "origin": "Stop U1",
+    "destination": "Stop V2"
+  },
+  {
+    "domainId": "trip-012",
+    "userId": "user-12",
+    "tripId": "t-1012",
+    "date": "2024-02-06T13:10:00.000Z",
+    "origin": "Stop W3",
+    "destination": "Stop X1"
+  },
+  {
+    "domainId": "trip-013",
+    "userId": "user-13",
+    "tripId": "t-1013",
+    "date": "2024-02-07T16:30:00.000Z",
+    "origin": "Stop Y4",
+    "destination": "Stop Z2"
+  },
+  {
+    "domainId": "trip-014",
+    "userId": "user-14",
+    "tripId": "t-1014",
+    "date": "2024-02-07T17:15:00.000Z",
+    "origin": "Stop A5",
+    "destination": "Stop B1"
+  },
+  {
+    "domainId": "trip-015",
+    "userId": "user-15",
+    "tripId": "t-1015",
+    "date": "2024-02-08T06:40:00.000Z",
+    "origin": "Stop C1",
+    "destination": "Stop D4"
+  },
+  {
+    "domainId": "trip-016",
+    "userId": "user-16",
+    "tripId": "t-1016",
+    "date": "2024-02-08T18:20:00.000Z",
+    "origin": "Stop E2",
+    "destination": "Stop F3"
+  },
+  {
+    "domainId": "trip-017",
+    "userId": "user-17",
+    "tripId": "t-1017",
+    "date": "2024-02-09T12:50:00.000Z",
+    "origin": "Stop G4",
+    "destination": "Stop H2"
+  },
+  {
+    "domainId": "trip-018",
+    "userId": "user-18",
+    "tripId": "t-1018",
+    "date": "2024-02-09T14:35:00.000Z",
+    "origin": "Stop I1",
+    "destination": "Stop J2"
+  },
+  {
+    "domainId": "trip-019",
+    "userId": "user-19",
+    "tripId": "t-1019",
+    "date": "2024-02-10T09:10:00.000Z",
+    "origin": "Stop K3",
+    "destination": "Stop L4"
+  },
+  {
+    "domainId": "trip-020",
+    "userId": "user-20",
+    "tripId": "t-1020",
+    "date": "2024-02-10T10:45:00.000Z",
+    "origin": "Stop M2",
+    "destination": "Stop N5"
+  }
+]

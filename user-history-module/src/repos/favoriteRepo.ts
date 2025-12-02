@@ -37,8 +37,8 @@ export default class FavoriteRepo implements IFavoriteRepo {
   }
 
 
-  public async findByDomainId(favoriteId: FavoriteId | string): Promise<Favorite> {
-    const query = { domainId: favoriteId };
+  public async findByUserId(userId: string): Promise<Favorite> {
+    const query = { userId: userId };
     const favoriteRecord = await this.favoriteSchema.findOne(query as FilterQuery<IFavoritePersistence & Document>);
 
     if (favoriteRecord != null) {
