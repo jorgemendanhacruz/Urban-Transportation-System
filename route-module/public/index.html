@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultar Rotas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Consultar Linhas de Metro</h1>
+
+<div class="box">
+  <label>Origem:</label>
+  <select id="fromSelect">
+    <option value="S1">S1</option>
+    <option value="S2">S2</option>
+    <option value="S3">S3</option>
+    <option value="S4">S4</option>
+    <option value="S5">S5</option>
+    <option value="S6">S6</option>
+    <option value="S7">S7</option>
+    <option value="S8">S8</option>
+  </select>
+
+  <label>Destino:</label>
+  <select id="toSelect">
+    <option value="S1">S1</option>
+    <option value="S2">S2</option>
+    <option value="S3">S3</option>
+    <option value="S4">S4</option>
+    <option value="S5">S5</option>
+    <option value="S6">S6</option>
+    <option value="S7">S7</option>
+    <option value="S8">S8</option>
+  </select>
+
+  <h3>Escolha o tipo de consulta:</h3>
+
+  <button onclick="requestRoute('simple')">Rota Simples</button>
+  <button onclick="requestRoute('details')">Rota Detalhada</button>
+  <button onclick="requestRoute('transfer')">Rota com Transferência</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
