@@ -1,0 +1,97 @@
+<!---
+<!doctype html>
+<html>
+<head><title>Home</title></head>
+<body>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+        {% for category, msg in messages %}
+          <li>[{{ category }}] {{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% if user %}
+    <h1>Olá, {{ user.first_name }}!</h1>
+    <p>Email: {{ user.email }}</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  {% else %}
+    <h1>Bem-vindo!</h1>
+    <a href="{{ url_for('login') }}">Login</a> |
+    <a href="{{ url_for('register') }}">Registar</a>
+  {% endif %}
+</body>
+</html> -->
+
+
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+
+  {% if user %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  {% endif %}
+</head>
+<body>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+        {% for category, msg in messages %}
+          <li>[{{ category }}] {{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% if user %}
+    <p>Login como: <strong>{{ user.first_name }} ({{ user.email }})</strong></p>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+    <h1>Consultar Linhas de Metro</h1>
+
+    <div class="box">
+      <label>Origem:</label>
+      <select id="fromSelect">
+        <option value="S1">S1</option>
+        <option value="S2">S2</option>
+        <option value="S3">S3</option>
+        <option value="S4">S4</option>
+        <option value="S5">S5</option>
+        <option value="S6">S6</option>
+        <option value="S7">S7</option>
+        <option value="S8">S8</option>
+      </select>
+
+      <label>Destino:</label>
+      <select id="toSelect">
+        <option value="S1">S1</option>
+        <option value="S2">S2</option>
+        <option value="S3">S3</option>
+        <option value="S4">S4</option>
+        <option value="S5">S5</option>
+        <option value="S6">S6</option>
+        <option value="S7">S7</option>
+        <option value="S8">S8</option>
+      </select>
+
+      <h3>Escolha o tipo de consulta:</h3>
+
+      <button onclick="requestRoute('simple')">Rota Simples</button>
+      <button onclick="requestRoute('details')">Rota Detalhada</button>
+      <button onclick="requestRoute('transfer')">Rota com Transferência</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  {% else %}
+    <h1>Bem-vindo!</h1>
+    <a href="{{ url_for('login') }}">Login</a> |
+    <a href="{{ url_for('register') }}">Registar</a>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado da Rota</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<h1>Resultado da Rota</h1>
+
+<div id="output" class="box"></div>
+
+<a href="{{ url_for('index') }}"><button>Voltar</button></a>
+
+<script>
+  const data = JSON.parse(localStorage.getItem("routeData"));
+  const out = document.getElementById("output");
+
+  if (!data || !data.route) {
+    out.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+  } else {
+    out.innerHTML = "<pre>" + JSON.stringify(data.route, null, 2) + "</pre>";
+  }
+</script>
+
+</body>
+</html>

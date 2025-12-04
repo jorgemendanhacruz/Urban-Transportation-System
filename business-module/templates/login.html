@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li>[{{ category }}] {{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('login') }}" method="post">
+      <label>Email:
+        <input type="email" name="email" required>
+      </label><br>
+      <label>Password:
+        <input type="password" name="password" required>
+      </label><br>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p>Ainda não tens conta? <a href="{{ url_for('register') }}">Registar</a></p>
+  </body>
+</html>
