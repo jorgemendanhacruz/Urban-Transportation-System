@@ -229,6 +229,29 @@ def result():
 
     return render_template("result.html", route_data=data)
 
+@app.route("/favorites")
+def favorites():
+    user_id = session["user_id"]
+    resp = requests.get(f"http://localhost:4000/api/favorite/{user_id}")
+    return render_template("result_generic.html",
+                           title="Favoritos",
+                           data=resp.json())
+
+@app.route("/notifications")
+def notifications():
+    user_id = session["user_id"]
+    resp = requests.get(f"http://localhost:4000/api/notification/{user_id}")
+    return render_template("result_generic.html",
+                           title="Notificações",
+                           data=resp.json())
+
+@app.route("/history")
+def history():
+    user_id = session["user_id"]
+    resp = requests.get(f"http://localhost:4000/api/userTripHistory/{user_id}")
+    return render_template("result_generic.html",
+                           title="Histórico",
+                           data=resp.json())
 
 
     

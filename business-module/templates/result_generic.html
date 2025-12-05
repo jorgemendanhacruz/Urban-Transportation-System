@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+
+    .item {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #0077cc;
+    }
+
+    .item h3 {
+      margin: 0 0 10px 0;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      background: #0077cc;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>{{ title }}</h1>
+
+<a href="http://127.0.0.1:5000">
+  <button>⬅ Voltar</button>
+</a>
+
+<div id="output" class="box"></div>
+
+<script>
+  const data = {{ data | tojson }};
+  const out = document.getElementById("output");
+
+  // Se não houver conteúdo
+  if (!data || data.length === 0) {
+    out.innerHTML = "<p>Nenhum registo encontrado.</p>";
+  }
+
+  // Se houver lista (array)
+  else if (Array.isArray(data)) {
+    let html = "";
+    data.forEach((item, index) => {
+      html += `<div class="item"><h3>Registo ${index + 1}</h3><pre>${JSON.stringify(item, null, 2)}</pre></div>`;
+    });
+    out.innerHTML = html;
+  }
+
+  // Se vier apenas um objeto
+  else if (typeof data === "object") {
+    out.innerHTML = `<div class="item"><pre>${JSON.stringify(data, null, 2)}</pre></div>`;
+  }
+
+  // Se vier texto
+  else {
+    out.innerHTML = `<p>${data}</p>`;
+  }
+</script>
+
+</body>
+</html>

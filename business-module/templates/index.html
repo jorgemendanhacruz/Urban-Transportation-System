@@ -21,11 +21,30 @@
     {% endif %}
   {% endwith %}
 
-  <!-- Se o utilizador estiver autenticado -->
   {% if user %}
 
     <p>Login como: <strong>{{ user.first_name }} ({{ user.email }})</strong></p>
     <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+    <!-- 🔥 BOTÕES PARA AS ROTAS DO FLASK -->
+    <div style="margin: 20px 0; display: flex; gap: 10px;">
+
+      <!-- Favoritos -->
+      <a href="{{ url_for('favorites') }}">
+        <button>⭐ Favoritos</button>
+      </a>
+
+      <!-- Notificações -->
+      <a href="{{ url_for('notifications') }}">
+        <button>🔔 Notificações</button>
+      </a>
+
+      <!-- Histórico -->
+      <a href="{{ url_for('history') }}">
+        <button>📜 Histórico</button>
+      </a>
+
+    </div>
 
     <h1>Consultar Linhas de Metro</h1>
 
@@ -60,7 +79,6 @@
 
         <h3>Escolha o tipo de consulta:</h3>
 
-        <!-- Três botões → cada um indica um tipo -->
         <button type="submit" name="type" value="simple">Rota Simples</button>
         <button type="submit" name="type" value="details">Rota Detalhada</button>
         <button type="submit" name="type" value="transfer">Rota com Transferência</button>
@@ -68,7 +86,6 @@
       </form>
     </div>
 
-  <!-- Se não estiver autenticado -->
   {% else %}
 
     <h1>Bem-vindo!</h1>
