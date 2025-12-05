@@ -1,352 +1,107 @@
 [
     {
         "domainId": "fav-001",
-        "userId": "user-01",
+        "userId": "1",
         "entityType": "line",
-        "entityId": "line-101",
+        "entityId": "L1",
         "createdAt": "2024-01-01T10:00:00.000Z"
     },
     {
         "domainId": "fav-002",
-        "userId": "user-02",
+        "userId": "2",
         "entityType": "stop",
-        "entityId": "stop-220",
+        "entityId": "S1",
         "createdAt": "2024-01-02T10:30:00.000Z"
     },
     {
         "domainId": "fav-003",
-        "userId": "user-03",
+        "userId": "3",
         "entityType": "itinerary",
-        "entityId": "itin-501",
+        "entityId": "I1",
         "createdAt": "2024-01-03T11:00:00.000Z"
     },
     {
         "domainId": "fav-004",
-        "userId": "user-01",
+        "userId": "4",
         "entityType": "line",
-        "entityId": "line-102",
+        "entityId": "L2",
         "createdAt": "2024-01-04T12:00:00.000Z"
     },
     {
         "domainId": "fav-005",
-        "userId": "user-04",
+        "userId": "5",
         "entityType": "stop",
-        "entityId": "stop-310",
+        "entityId": "S2",
         "createdAt": "2024-01-05T13:00:00.000Z"
     },
     {
         "domainId": "fav-006",
-        "userId": "user-05",
+        "userId": "6",
         "entityType": "itinerary",
-        "entityId": "itin-502",
+        "entityId": "I2",
         "createdAt": "2024-01-06T14:00:00.000Z"
     },
     {
         "domainId": "fav-007",
-        "userId": "user-06",
+        "userId": "7",
         "entityType": "line",
-        "entityId": "line-103",
+        "entityId": "L3",
         "createdAt": "2024-01-07T15:00:00.000Z"
     },
     {
         "domainId": "fav-008",
-        "userId": "user-02",
+        "userId": "8",
         "entityType": "stop",
-        "entityId": "stop-221",
+        "entityId": "S3",
         "createdAt": "2024-01-08T16:00:00.000Z"
     },
     {
         "domainId": "fav-009",
-        "userId": "user-07",
+        "userId": "9",
         "entityType": "itinerary",
-        "entityId": "itin-503",
+        "entityId": "I3",
         "createdAt": "2024-01-09T17:00:00.000Z"
     },
     {
         "domainId": "fav-010",
-        "userId": "user-08",
-        "entityType": "line",
-        "entityId": "line-104",
+        "userId": "10",
+        "entityType": "stop",
+        "entityId": "S4",
         "createdAt": "2024-01-10T18:00:00.000Z"
     },
     {
         "domainId": "fav-011",
-        "userId": "user-09",
+        "userId": "1",
         "entityType": "stop",
-        "entityId": "stop-230",
+        "entityId": "S5",
         "createdAt": "2024-01-11T10:00:00.000Z"
     },
     {
         "domainId": "fav-012",
-        "userId": "user-10",
+        "userId": "2",
         "entityType": "itinerary",
-        "entityId": "itin-504",
+        "entityId": "I4",
         "createdAt": "2024-01-12T11:00:00.000Z"
     },
     {
         "domainId": "fav-013",
-        "userId": "user-03",
-        "entityType": "line",
-        "entityId": "line-105",
+        "userId": "3",
+        "entityType": "stop",
+        "entityId": "S6",
         "createdAt": "2024-01-13T12:00:00.000Z"
     },
     {
         "domainId": "fav-014",
-        "userId": "user-11",
-        "entityType": "stop",
-        "entityId": "stop-231",
+        "userId": "4",
+        "entityType": "itinerary",
+        "entityId": "I5",
         "createdAt": "2024-01-14T13:00:00.000Z"
     },
     {
         "domainId": "fav-015",
-        "userId": "user-04",
-        "entityType": "itinerary",
-        "entityId": "itin-505",
+        "userId": "5",
+        "entityType": "stop",
+        "entityId": "S7",
         "createdAt": "2024-01-15T14:00:00.000Z"
-    },
-    {
-        "domainId": "fav-016",
-        "userId": "user-12",
-        "entityType": "line",
-        "entityId": "line-106",
-        "createdAt": "2024-01-16T15:00:00.000Z"
-    },
-    {
-        "domainId": "fav-017",
-        "userId": "user-13",
-        "entityType": "stop",
-        "entityId": "stop-232",
-        "createdAt": "2024-01-17T16:00:00.000Z"
-    },
-    {
-        "domainId": "fav-018",
-        "userId": "user-14",
-        "entityType": "itinerary",
-        "entityId": "itin-506",
-        "createdAt": "2024-01-18T17:00:00.000Z"
-    },
-    {
-        "domainId": "fav-019",
-        "userId": "user-15",
-        "entityType": "line",
-        "entityId": "line-107",
-        "createdAt": "2024-01-19T18:00:00.000Z"
-    },
-    {
-        "domainId": "fav-020",
-        "userId": "user-16",
-        "entityType": "stop",
-        "entityId": "stop-233",
-        "createdAt": "2024-01-20T19:00:00.000Z"
-    },
-    {
-        "domainId": "fav-021",
-        "userId": "user-02",
-        "entityType": "itinerary",
-        "entityId": "itin-507",
-        "createdAt": "2024-01-21T09:00:00.000Z"
-    },
-    {
-        "domainId": "fav-022",
-        "userId": "user-17",
-        "entityType": "line",
-        "entityId": "line-108",
-        "createdAt": "2024-01-22T10:00:00.000Z"
-    },
-    {
-        "domainId": "fav-023",
-        "userId": "user-18",
-        "entityType": "stop",
-        "entityId": "stop-234",
-        "createdAt": "2024-01-23T11:00:00.000Z"
-    },
-    {
-        "domainId": "fav-024",
-        "userId": "user-19",
-        "entityType": "itinerary",
-        "entityId": "itin-508",
-        "createdAt": "2024-01-24T12:00:00.000Z"
-    },
-    {
-        "domainId": "fav-025",
-        "userId": "user-20",
-        "entityType": "line",
-        "entityId": "line-109",
-        "createdAt": "2024-01-25T13:00:00.000Z"
-    },
-    {
-        "domainId": "fav-026",
-        "userId": "user-21",
-        "entityType": "stop",
-        "entityId": "stop-235",
-        "createdAt": "2024-01-26T14:00:00.000Z"
-    },
-    {
-        "domainId": "fav-027",
-        "userId": "user-22",
-        "entityType": "itinerary",
-        "entityId": "itin-509",
-        "createdAt": "2024-01-27T15:00:00.000Z"
-    },
-    {
-        "domainId": "fav-028",
-        "userId": "user-23",
-        "entityType": "line",
-        "entityId": "line-110",
-        "createdAt": "2024-01-28T16:00:00.000Z"
-    },
-    {
-        "domainId": "fav-029",
-        "userId": "user-24",
-        "entityType": "stop",
-        "entityId": "stop-236",
-        "createdAt": "2024-01-29T17:00:00.000Z"
-    },
-    {
-        "domainId": "fav-030",
-        "userId": "user-25",
-        "entityType": "itinerary",
-        "entityId": "itin-510",
-        "createdAt": "2024-01-30T18:00:00.000Z"
-    },
-    {
-        "domainId": "fav-031",
-        "userId": "user-26",
-        "entityType": "line",
-        "entityId": "line-111",
-        "createdAt": "2024-02-01T10:00:00.000Z"
-    },
-    {
-        "domainId": "fav-032",
-        "userId": "user-27",
-        "entityType": "stop",
-        "entityId": "stop-240",
-        "createdAt": "2024-02-02T11:00:00.000Z"
-    },
-    {
-        "domainId": "fav-033",
-        "userId": "user-28",
-        "entityType": "itinerary",
-        "entityId": "itin-511",
-        "createdAt": "2024-02-03T12:00:00.000Z"
-    },
-    {
-        "domainId": "fav-034",
-        "userId": "user-07",
-        "entityType": "line",
-        "entityId": "line-112",
-        "createdAt": "2024-02-04T13:00:00.000Z"
-    },
-    {
-        "domainId": "fav-035",
-        "userId": "user-29",
-        "entityType": "stop",
-        "entityId": "stop-241",
-        "createdAt": "2024-02-05T14:00:00.000Z"
-    },
-    {
-        "domainId": "fav-036",
-        "userId": "user-30",
-        "entityType": "itinerary",
-        "entityId": "itin-512",
-        "createdAt": "2024-02-06T15:00:00.000Z"
-    },
-    {
-        "domainId": "fav-037",
-        "userId": "user-31",
-        "entityType": "line",
-        "entityId": "line-113",
-        "createdAt": "2024-02-07T16:00:00.000Z"
-    },
-    {
-        "domainId": "fav-038",
-        "userId": "user-32",
-        "entityType": "stop",
-        "entityId": "stop-242",
-        "createdAt": "2024-02-08T17:00:00.000Z"
-    },
-    {
-        "domainId": "fav-039",
-        "userId": "user-33",
-        "entityType": "itinerary",
-        "entityId": "itin-513",
-        "createdAt": "2024-02-09T18:00:00.000Z"
-    },
-    {
-        "domainId": "fav-040",
-        "userId": "user-34",
-        "entityType": "line",
-        "entityId": "line-114",
-        "createdAt": "2024-02-10T19:00:00.000Z"
-    },
-    {
-        "domainId": "fav-041",
-        "userId": "user-35",
-        "entityType": "stop",
-        "entityId": "stop-243",
-        "createdAt": "2024-02-11T10:00:00.000Z"
-    },
-    {
-        "domainId": "fav-042",
-        "userId": "user-36",
-        "entityType": "itinerary",
-        "entityId": "itin-514",
-        "createdAt": "2024-02-12T11:00:00.000Z"
-    },
-    {
-        "domainId": "fav-043",
-        "userId": "user-37",
-        "entityType": "line",
-        "entityId": "line-115",
-        "createdAt": "2024-02-13T12:00:00.000Z"
-    },
-    {
-        "domainId": "fav-044",
-        "userId": "user-38",
-        "entityType": "stop",
-        "entityId": "stop-244",
-        "createdAt": "2024-02-14T13:00:00.000Z"
-    },
-    {
-        "domainId": "fav-045",
-        "userId": "user-39",
-        "entityType": "itinerary",
-        "entityId": "itin-515",
-        "createdAt": "2024-02-15T14:00:00.000Z"
-    },
-    {
-        "domainId": "fav-046",
-        "userId": "user-40",
-        "entityType": "line",
-        "entityId": "line-116",
-        "createdAt": "2024-02-16T15:00:00.000Z"
-    },
-    {
-        "domainId": "fav-047",
-        "userId": "user-41",
-        "entityType": "stop",
-        "entityId": "stop-245",
-        "createdAt": "2024-02-17T16:00:00.000Z"
-    },
-    {
-        "domainId": "fav-048",
-        "userId": "user-42",
-        "entityType": "itinerary",
-        "entityId": "itin-516",
-        "createdAt": "2024-02-18T17:00:00.000Z"
-    },
-    {
-        "domainId": "fav-049",
-        "userId": "user-43",
-        "entityType": "line",
-        "entityId": "line-117",
-        "createdAt": "2024-02-19T18:00:00.000Z"
-    },
-    {
-        "domainId": "fav-050",
-        "userId": "user-44",
-        "entityType": "stop",
-        "entityId": "stop-246",
-        "createdAt": "2024-02-20T19:00:00.000Z"
     }
 ]
