@@ -1,7 +1,7 @@
 [
   {
     "domainId": "notif-001",
-    "userId": "user-01",
+    "userId": "1",
     "type": "reminder",
     "message": "Don't forget your upcoming scheduled itinerary.",
     "status": "pending",
@@ -10,7 +10,7 @@
   },
   {
     "domainId": "notif-002",
-    "userId": "user-02",
+    "userId": "2",
     "type": "service_change",
     "message": "Bus line 101 has a schedule update tomorrow.",
     "status": "sent",
@@ -19,7 +19,7 @@
   },
   {
     "domainId": "notif-003",
-    "userId": "user-03",
+    "userId": "3",
     "type": "reminder",
     "message": "Your saved stop has new alerts available.",
     "status": "read",
@@ -28,7 +28,7 @@
   },
   {
     "domainId": "notif-004",
-    "userId": "user-04",
+    "userId": "4",
     "type": "service_change",
     "message": "Service disruption expected due to maintenance.",
     "status": "pending",
@@ -37,7 +37,7 @@
   },
   {
     "domainId": "notif-005",
-    "userId": "user-05",
+    "userId": "5",
     "type": "reminder",
     "message": "You have unread notifications in your dashboard.",
     "status": "sent",
@@ -46,7 +46,7 @@
   },
   {
     "domainId": "notif-006",
-    "userId": "user-06",
+    "userId": "6",
     "type": "service_change",
     "message": "Stop 42 will be temporarily closed today.",
     "status": "read",
@@ -55,7 +55,7 @@
   },
   {
     "domainId": "notif-007",
-    "userId": "user-07",
+    "userId": "7",
     "type": "reminder",
     "message": "Your itinerary alert is set for 30 minutes from now.",
     "status": "pending",
@@ -64,7 +64,7 @@
   },
   {
     "domainId": "notif-008",
-    "userId": "user-08",
+    "userId": "8",
     "type": "service_change",
     "message": "New stop added near your location.",
     "status": "sent",
@@ -73,7 +73,7 @@
   },
   {
     "domainId": "notif-009",
-    "userId": "user-09",
+    "userId": "9",
     "type": "reminder",
     "message": "Your bus pass expires soon.",
     "status": "read",
@@ -82,101 +82,11 @@
   },
   {
     "domainId": "notif-010",
-    "userId": "user-10",
+    "userId": "10",
     "type": "service_change",
     "message": "Route 303 will have delays due to weather.",
     "status": "pending",
     "createdAt": "2024-01-10T18:00:00.000Z",
     "updatedAt": "2024-01-10T18:00:00.000Z"
-  },
-  {
-    "domainId": "notif-011",
-    "userId": "user-11",
-    "type": "service_change",
-    "message": "Temporary detour in effect for Line 7.",
-    "status": "sent",
-    "createdAt": "2024-01-11T07:15:00.000Z",
-    "updatedAt": "2024-01-11T07:45:00.000Z"
-  },
-  {
-    "domainId": "notif-012",
-    "userId": "user-12",
-    "type": "reminder",
-    "message": "You scheduled a trip for later today.",
-    "status": "read",
-    "createdAt": "2024-01-12T13:40:00.000Z",
-    "updatedAt": "2024-01-12T14:00:00.000Z"
-  },
-  {
-    "domainId": "notif-013",
-    "userId": "user-13",
-    "type": "service_change",
-    "message": "Night service hours have been extended.",
-    "status": "pending",
-    "createdAt": "2024-01-13T22:00:00.000Z",
-    "updatedAt": "2024-01-13T22:00:00.000Z"
-  },
-  {
-    "domainId": "notif-014",
-    "userId": "user-14",
-    "type": "reminder",
-    "message": "Time to check your usual stops for updates.",
-    "status": "sent",
-    "createdAt": "2024-01-14T06:30:00.000Z",
-    "updatedAt": "2024-01-14T06:45:00.000Z"
-  },
-  {
-    "domainId": "notif-015",
-    "userId": "user-15",
-    "type": "service_change",
-    "message": "Service adjustments planned this weekend.",
-    "status": "read",
-    "createdAt": "2024-01-15T19:15:00.000Z",
-    "updatedAt": "2024-01-15T19:45:00.000Z"
-  },
-  {
-    "domainId": "notif-016",
-    "userId": "user-16",
-    "type": "reminder",
-    "message": "Your morning commute reminder.",
-    "status": "pending",
-    "createdAt": "2024-01-16T07:00:00.000Z",
-    "updatedAt": "2024-01-16T07:00:00.000Z"
-  },
-  {
-    "domainId": "notif-017",
-    "userId": "user-17",
-    "type": "service_change",
-    "message": "New maintenance scheduled for Line 12.",
-    "status": "sent",
-    "createdAt": "2024-01-17T10:45:00.000Z",
-    "updatedAt": "2024-01-17T11:10:00.000Z"
-  },
-  {
-    "domainId": "notif-018",
-    "userId": "user-18",
-    "type": "reminder",
-    "message": "Review your favorites for possible updates.",
-    "status": "read",
-    "createdAt": "2024-01-18T12:30:00.000Z",
-    "updatedAt": "2024-01-18T12:55:00.000Z"
-  },
-  {
-    "domainId": "notif-019",
-    "userId": "user-19",
-    "type": "service_change",
-    "message": "Platform changes now active at Central Station.",
-    "status": "pending",
-    "createdAt": "2024-01-19T09:20:00.000Z",
-    "updatedAt": "2024-01-19T09:20:00.000Z"
-  },
-  {
-    "domainId": "notif-020",
-    "userId": "user-20",
-    "type": "reminder",
-    "message": "Check your scheduled alerts for today's commute.",
-    "status": "sent",
-    "createdAt": "2024-01-20T08:50:00.000Z",
-    "updatedAt": "2024-01-20T09:10:00.000Z"
   }
 ]
