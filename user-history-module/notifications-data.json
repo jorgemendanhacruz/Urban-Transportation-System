@@ -9,6 +9,24 @@
     "updatedAt": "2024-01-01T09:00:00.000Z"
   },
   {
+    "domainId": "notif-021",
+    "userId": "1",
+    "type": "reminder",
+    "message": "Have a nice trip!",
+    "status": "pending",
+    "createdAt": "2024-01-01T09:00:00.000Z",
+    "updatedAt": "2024-01-01T09:00:00.000Z"
+  },
+  {
+      "domainId": "notif-023",
+      "userId": "1",
+      "type": "reminder",
+      "message": "Have a nice trip!",
+      "status": "pending",
+      "createdAt": "2025-01-06T09:00:00.000Z",
+      "updatedAt": "2025-01-06T09:00:00.000Z"
+  },
+  {
     "domainId": "notif-002",
     "userId": "2",
     "type": "service_change",

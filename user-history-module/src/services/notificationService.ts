@@ -31,18 +31,19 @@ export default class NotificationService implements INotificationService {
     }
   }
 
-  public async getNotification(userId: string): Promise<Result<INotificationDTO>> {
+  public async getNotification(userId: string): Promise<Result<INotificationDTO[]>> {
 
     try {
-      const notification = await this.notificationRepo.findByUserId(userId);
+      const notifications = await this.notificationRepo.findByUserId(userId);
 
-      if (notification === null) {
-        return Result.fail<INotificationDTO>("Favorite not found");
+      if (!notifications || notifications.length === 0) {
+        return Result.ok<INotificationDTO[]>([]);
       }
-      else {
-        const notificationDtoResult = NotificationMap.toDTO(notification) as INotificationDTO;
-        return Result.ok<INotificationDTO>(notificationDtoResult)
-      }
+
+      const notificationDtos = notifications.map(not => NotificationMap.toDTO(not) as INotificationDTO);
+
+      return Result.ok<INotificationDTO[]>(notificationDtos);
+
     } catch (e) {
       throw e;
     }

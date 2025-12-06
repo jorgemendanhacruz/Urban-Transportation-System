@@ -37,14 +37,13 @@ export default class NotificationRepo implements INotificationRepo {
   }
 
 
-  public async findByUserId(userId: string): Promise<Notification> {
-    const query = { userId: userId };
-    const notificationRecord = await this.notificationSchema.findOne(query as FilterQuery<INotificationPersistence & Document>);
+  public async findByUserId(userId: string): Promise<Notification[]> {
+    const query = { userId: userId , status: "pending" };
+    const notificationRecords = await this.notificationSchema.find(query as FilterQuery<INotificationPersistence & Document>);
 
-    if (notificationRecord != null) {
-      return NotificationMap.toDomain(notificationRecord);
+    if (!notificationRecords || notificationRecords.length === 0) {
+      return [];
     }
-    else
-      return null;
+    return notificationRecords.map((notification) => NotificationMap.toDomain(notification));
   }
 }
