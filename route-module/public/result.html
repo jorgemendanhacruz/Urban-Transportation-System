@@ -3,25 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <title>Resultado da Rota</title>
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 <body>
 
 <h1>Resultado da Rota</h1>
 
+<!-- MAPA -->
+<div id="map" 
+     style="height: 450px; 
+            width: 90%; 
+            margin: 20px auto; 
+            border-radius: 12px;">
+</div>
+
+<!-- JSON -->
 <div id="output" class="box"></div>
 
 <a href="index.html"><button>Voltar</button></a>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+
   const data = JSON.parse(localStorage.getItem("routeData"));
   const out = document.getElementById("output");
 
   if (!data || !data.route) {
     out.innerHTML = "<p>Nenhum resultado encontrado.</p>";
-  } else {
-    out.innerHTML = "<pre>" + JSON.stringify(data.route, null, 2) + "</pre>";
+    return;
   }
+
+  // Mostrar JSON
+  out.innerHTML = "<pre>" + JSON.stringify(data.route, null, 2) + "</pre>";
+
+  const route = data.route;
+  const coords = data.coordinates || {};
+
+  // ---------------------------
+  // OBTER LISTA DE PARAGENS
+  // ---------------------------
+  let stopSequence = [];
+
+  // Caso 1 — rota simples / detalhada
+  if (route.stops) {
+    stopSequence = route.stops;
+  }
+
+  // Caso 2 — rota com transferência
+  else if (route.steps) {
+    route.steps.forEach(step => {
+      if (step.stops) {
+        step.stops.forEach(id => {
+          if (!stopSequence.includes(id)) stopSequence.push(id);
+        });
+      }
+    });
+  }
+
+  if (stopSequence.length === 0) {
+    console.warn("Sem paragens para desenhar o mapa");
+    return;
+  }
+
+  // ---------------------------
+  // DESENHAR O MAPA
+  // ---------------------------
+  const map = L.map("map").setView([41.1579, -8.6291], 14);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19
+  }).addTo(map);
+
+  let latlngs = [];
+
+  stopSequence.forEach(stopID => {
+    const pos = coords[stopID];
+    if (!pos) return;
+
+    let lat = pos.lat;
+    let lng = pos.lon;
+
+    latlngs.push([lat, lng]);
+
+    L.marker([lat, lng])
+      .addTo(map)
+      .bindPopup(`<b>${stopID}</b>`);
+  });
+
+  if (latlngs.length > 1) {
+    const polyline = L.polyline(latlngs, {
+      color: "red",
+      weight: 5
+    }).addTo(map);
+
+    map.fitBounds(polyline.getBounds());
+  }
+
+});
 </script>
 
 </body>

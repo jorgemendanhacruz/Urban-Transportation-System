@@ -4,8 +4,9 @@ const MINUTES_PER_SEGMENT = 2;
 const DISTANCE_PER_SEGMENT = 300; // metros
 
 
-
-// 1️⃣ ROTA SIMPLES (HORAS + DURAÇÃO + DISTÂNCIA)
+// ---------------------------------------------------------
+// 1️⃣ ROTA SIMPLES
+// ---------------------------------------------------------
 export async function getRoute(from, to) {
   const session = driver.session();
 
@@ -27,7 +28,6 @@ export async function getRoute(from, to) {
       ...path.segments.map(seg => seg.end.properties.stopID)
     ];
 
-    // duração e horários
     const totalDuration = segments * MINUTES_PER_SEGMENT;
     const departure = new Date();
     const arrival = new Date(departure.getTime() + totalDuration * 60000);
@@ -35,7 +35,6 @@ export async function getRoute(from, to) {
     const formatTime = d =>
       d.toLocaleTimeString("pt-PT", { hour: "2-digit", minute: "2-digit" });
 
-    // distância
     const totalDistance = segments * DISTANCE_PER_SEGMENT;
 
     return {
@@ -57,10 +56,9 @@ export async function getRoute(from, to) {
 }
 
 
-
-
-
-// 2️⃣ ROTA DETALHADA (ZONA + COORDS + HORAS + DISTÂNCIA)
+// ---------------------------------------------------------
+// 2️⃣ ROTA DETALHADA
+// ---------------------------------------------------------
 export async function getRouteDetails(from, to) {
   const session = driver.session();
 
@@ -104,7 +102,6 @@ export async function getRouteDetails(from, to) {
       ...p.segments.map(seg => seg.end.properties.stopID)
     ];
 
-    // TEMPOS PARA CADA STOP
     const departure = new Date();
     let currentTime = new Date(departure);
 
@@ -124,8 +121,6 @@ export async function getRouteDetails(from, to) {
     }
 
     const arrival = currentTime;
-
-    // distância total
     const totalDistance = segments.length * DISTANCE_PER_SEGMENT;
 
     return {
@@ -149,10 +144,9 @@ export async function getRouteDetails(from, to) {
 }
 
 
-
-
-
-// 3️⃣ ROTA COM TRANSFERÊNCIAS (HORAS + DISTÂNCIA + DURAÇÃO)
+// ---------------------------------------------------------
+// 3️⃣ ROTA COM TRANSFERÊNCIAS
+// ---------------------------------------------------------
 export async function getRouteWithTransfer(from, to) {
   const session = driver.session();
 
@@ -175,13 +169,9 @@ export async function getRouteWithTransfer(from, to) {
     if (!result.records.length) return null;
 
     const record = result.records[0];
-    const p = record.get("p");
     const segments = record.get("segments");
 
-    // duração
     const totalDuration = segments.length * MINUTES_PER_SEGMENT;
-
-    // HORÁRIOS
     const departure = new Date();
     const arrival = new Date(departure.getTime() + totalDuration * 60000);
 
@@ -191,10 +181,8 @@ export async function getRouteWithTransfer(from, to) {
         minute: "2-digit"
       });
 
-    // DISTÂNCIA TOTAL
     const totalDistance = segments.length * DISTANCE_PER_SEGMENT;
 
-    // AGRUPAR TRANSFERÊNCIAS
     const steps = [];
     let group = {
       line: segments[0].line,
@@ -241,4 +229,35 @@ export async function getRouteWithTransfer(from, to) {
   } finally {
     await session.close();
   }
+}
+
+
+// ---------------------------------------------------------
+// 4️⃣ FUNÇÃO NOVA — OBTÉM COORDENADAS DAS PARAGENS
+// ---------------------------------------------------------
+export async function getCoordinatesForStops(stopIDs) {
+  const session = driver.session();
+
+  const query = `
+    MATCH (s:Stop)
+    WHERE s.stopID IN $ids
+    RETURN 
+      s.stopID AS id,
+      s.latitude AS lat,
+      s.longitude AS lon
+  `;
+
+  const result = await session.run(query, { ids: stopIDs });
+
+  await session.close();
+
+  const coords = {};
+  result.records.forEach(r => {
+    coords[r.get("id")] = {
+      lat: r.get("lat"),
+      lon: r.get("lon")
+    };
+  });
+
+  return coords;
 }

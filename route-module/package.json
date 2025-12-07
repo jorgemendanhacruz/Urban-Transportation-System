@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "dotenv": "^17.2.3",
-    "express": "^5.2.0",
+    "express": "^5.2.1",
     "neo4j-driver": "~5.28.0"
   }
 }
